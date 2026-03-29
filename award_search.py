@@ -247,16 +247,27 @@ HTML = """<!DOCTYPE html>
   }
   .header h1 { font-size: 22px; font-weight: 700; color: #fff; }
   .header span { font-size: 13px; color: #718096; }
-  .search-panel { max-width: 960px; margin: 32px auto; padding: 0 20px; }
+  .search-panel { max-width: 960px; margin: 24px auto; padding: 0 16px; }
   .search-box {
     background: #1a1f2e;
     border: 1px solid #2d3748;
     border-radius: 12px;
-    padding: 24px;
+    padding: 20px;
+    overflow: visible;
   }
   .row { display: flex; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
   .field { flex: 1; min-width: 140px; position: relative; }
   .field.narrow { flex: 0 0 100px; min-width: 80px; }
+  @media (max-width: 480px) {
+    .search-panel { margin: 12px auto; padding: 0 12px; }
+    .search-box { padding: 16px; }
+    .row { flex-direction: column; gap: 10px; }
+    .field, .field.narrow { flex: 1 1 100%; min-width: 0; width: 100%; }
+    .swap-btn { display: none; }
+    .field input { font-size: 16px; padding: 12px 14px; }
+    .cabin-btn { padding: 10px 18px; font-size: 14px; }
+    .search-btn { padding: 14px; font-size: 17px; }
+  }
   .field label {
     display: block; font-size: 11px; color: #718096;
     margin-bottom: 6px; font-weight: 600; letter-spacing: .6px; text-transform: uppercase;
